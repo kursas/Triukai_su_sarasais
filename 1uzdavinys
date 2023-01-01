@@ -1,0 +1,20 @@
+#Prie kiekvieno sakinio su jūsų pasirinktu tekstu, pridėtų šauktuką ir atspausdintų naują sakinį.
+#Naudoti map (su lambda) arba comprehension, " ".join()
+
+sakinys=['Sukurta programa naudojant map funkcija']
+add_sakinys=map(lambda x:x+'!',sakinys)
+print(list(add_sakinys))
+
+sakinys1=['Sukurta programa naudojant comprehenssion','Labas rytas']
+add_sakinys1=[x+ '!' for x in sakinys1]
+print(add_sakinys1)
+
+sakinys2=['Sukurta programa naudojant join() funkcija','labas vakaras', '']
+print('! '.join(sakinys2))
+
+#output
+['Sukurta programa naudojant map funkcija!']
+['Sukurta programa naudojant comprehenssion!', 'Labas rytas!']
+Sukurta programa naudojant join() funkcija! labas vakaras! 
+
+Process finished with exit code 0
