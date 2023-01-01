@@ -1,0 +1,26 @@
+# Duotas sąrašas: sarasas = [2.5, 2, "Labas", True, 5, 7, 8, 2.8, "Vakaras","Trys Karaliai"]
+# Sukurti programą, kuri:
+# • Paskaičiuotų ir atspausdintų visų sąrašo skaičių sumą
+# • Sudėtų ir atspausdintų visus sąrašo žodžius
+# • Suskaičiuotų ir atspausdintų, kiek sąraše yra loginių (boolean) kintamųjų su True reikšme
+# Patarimai:
+# • Naudoti filter arba comprehension, sum, " ".join()
+sarasas = [2.5, 2, "Labas", True, 5, 7, 8, 2.8, "Vakaras","Trys Karaliai"]
+float_kiekis=sum(type(c) is float for c in sarasas)
+print(f"float tipo duomenu sarase:{float_kiekis}")
+result=[x for x in sarasas if isinstance(x,(int,float))]#Paskaičiuotų ir atspausdintų visų sąrašo skaičių sumą
+print(f"visų sąrašo skaičių sumą:{sum(result)}")
+result_zodziai=[x for x in sarasas if isinstance(x,str)]#Sudėtų ir atspausdintų visus sąrašo žodžius
+result2="+".join(result_zodziai)
+print(f"sujungtu visu zodziu is saraso per '+' kiekis:\n{result2}")
+bool_kiekis=sum(type(c) is bool for c in sarasas)#Suskaičiuotų ir atspausdintų, kiek sąraše yra loginių (boolean) kintamųjų su True reikšme
+print(f"bool tipo duomenu sarase:{bool_kiekis}")
+
+#output
+float tipo duomenu sarase:2
+visų sąrašo skaičių sumą:28.3
+sujungtu visu zodziu is saraso per '+' kiekis:
+Labas+Vakaras+Trys Karaliai
+bool tipo duomenu sarase:1
+
+Process finished with exit code 0
