@@ -1,0 +1,40 @@
+# Sukurti programą, kuri:
+# • Turėtų klasę Human, su savybėmis vardas ir amzius
+# • Klasėje būtų repr metodas, kuris atvaizduotų vardą ir amžių
+# • Inicijuoti kelis Human objektus su vardais ir amžiais
+# • Įdėti sukurtus Human objektus į naują sąrašą
+# • Surūšiuotų ir atspausdintų sąrašo objektus pagal vardą ir pagal amžių (ir atbulai)
+# Patarimai:
+# • Naudoti sorted, attrgetter, reverse, funkciją repr
+# • from operator import attrgetter
+
+from operator import attrgetter
+class Human:
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    def __repr__(self):
+        return f"{self.name}:{self.age}"
+human1=Human("Dirk",24)
+human2=Human("Ben",28)
+human3=Human("Tad",42)
+human_list=[human1,human2,human3]
+sorteb_by_name=sorted(human_list,key=attrgetter("name"))
+sorteb_by_age=sorted(human_list,key=attrgetter("age"))
+
+sorted_by_reeverse_name=sorted(human_list,key=attrgetter("name"),reverse=True)
+sorted_by_reeverse_age=sorted(human_list,key=attrgetter("age"),reverse=True)
+
+print(sorteb_by_name)
+print(sorteb_by_age)
+print(sorted_by_reeverse_name)
+print(sorted_by_reeverse_age)
+
+#output
+[Ben:28, Dirk:24, Tad:42]
+[Dirk:24, Ben:28, Tad:42]
+[Tad:42, Dirk:24, Ben:28]
+[Tad:42, Ben:28, Dirk:24]
+
+Process finished with exit code 0
